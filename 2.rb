@@ -16,3 +16,13 @@
 #
 ## Решение:
 
+require 'digest'
+
+token = gets.strip
+(0..).each do |i|
+  row = "#{token}#{i}"
+  if Digest::MD5.hexdigest(row).start_with?("00000")
+    puts i
+    break
+  end
+end

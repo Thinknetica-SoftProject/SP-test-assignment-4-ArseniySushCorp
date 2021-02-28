@@ -17,5 +17,5 @@
 ## Решение:
 
 
-
-
+data = File.read('data/1.txt').strip
+puts data.split('').map { |token| token == '(' ? 1 : -1 }.reduce(:+)
